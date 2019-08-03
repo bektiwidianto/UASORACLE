@@ -1,0 +1,40 @@
+<main role="main" class="container">
+		<?php 
+			if(!empty($beli)){
+				$no = 1;
+				?>
+					<table id="TableData" class="table table-striped">
+						<thead>
+						<tr>
+							<th>NO</th>
+							<th>Kode Transaksi</th>
+							<th>Kode Barang</th>
+							<th>Kode Customer</th>
+							<th>Tanggal</th>
+						</tr>
+						</thead>
+						<tbody>
+						<?php
+							foreach ($beli as $s => $d) {
+								?>
+									<tr>
+										<td><?php echo $no++;?></td>
+										<td><?php echo $d['kd_transaksi'];?></td>
+										<td><?php echo $d['kd_barang'];?></td>
+										<td><?php echo $d['kd_customer'];?></td>
+										<td><?php echo $d['tgl'];?></td>
+									</tr>
+								<?php 
+							}
+						?>
+						</tbody>
+					</table>
+				<?php
+			}else{
+				?>
+					<h3>Data pembelian kosong</h3>
+				<?php
+			}
+
+		?>
+</main>
